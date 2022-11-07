@@ -12,7 +12,7 @@ function App() {
     checkWin();
     checkIfTie();
 
-    if (player == "X") {
+    if (player === "X") {
       setPlayer("O");
     } else {
       setPlayer("X");
@@ -20,7 +20,7 @@ function App() {
   }, [board]);
 
   useEffect(() => {
-    if (result.state != "none") {
+    if (result.state !== "none") {
       alert(`Game Finished! Winning Player: ${result.winner}`);
       restartGame();
     }
@@ -43,7 +43,7 @@ function App() {
       if (firstPlayer === "") return;
       let foundWinningPattern = true;
       currPattern.forEach((idx) => {
-        if (board[idx] != firstPlayer) {
+        if (board[idx] !== firstPlayer) {
           foundWinningPattern = false;
         }
       });
@@ -56,7 +56,7 @@ function App() {
   const checkIfTie = () => {
     let filled = true;
     board.forEach((square) => {
-      if (square == "") {
+      if (square === "") {
         filled = false;
       }
     });
